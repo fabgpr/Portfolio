@@ -15,6 +15,12 @@ export const sendMail = createAsyncThunk(
             },
             position: toast.POSITION.BOTTOM_LEFT,
           },
+          error: {
+            render() {
+              return "Hubo un problema, porfavor vuelva a intentar en 1 minuto, puede que el servidor todavia no haya encendido.";
+            },
+            position: toast.POSITION.BOTTOM_LEFT,
+          },
         }
       );
 
