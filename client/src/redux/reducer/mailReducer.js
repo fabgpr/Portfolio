@@ -7,7 +7,7 @@ export const sendMail = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const response = await toast.promise(
-        axios.post("http://localhost:3001/mail", data),
+        axios.post("https://portofolioapi.onrender.com/mail", data),
         {
           pending: {
             render() {
