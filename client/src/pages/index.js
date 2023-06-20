@@ -3,15 +3,23 @@ import AboutMe from "@/components/about";
 import Projects from "@/components/projects";
 import TechSkills from "@/components/techSkills";
 import Footer from "@/components/footer";
-import { ToastContainer } from "react-toastify";
 
+import { ToastContainer } from "react-toastify";
 import { useRef } from "react";
+import Head from "next/head";
 
 export default function Home() {
   const scrollRef = useRef(null);
 
   return (
-    <div>
+    <div
+      className="overflow-hidden
+    "
+    >
+      <Head>
+        <title>FabianGPR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
       <Banner ref={scrollRef} />
       <AboutMe />
       <Projects />

@@ -8,40 +8,44 @@ export default function AboutMe() {
   };
 
   return (
-    <div className="mt-44">
-      <div className="m-20 mt-32 mb-20 ml-20 mr-20 w-[35%]">
-        <h1 className="text-white font-bold text-5xl relative ">
-          Sobre mí
-          <span className="absolute bottom-0 left-0 h-[7px] bg-subrayado -mb-3 w-28"></span>
-          <Image
-            src={aboutIcon}
-            className="absolute h-20 w-auto bottom-0 left-[212px] -mb-2"
-          />
+    <div className="flex justify-center w-[80vw]n h-[35rem] mt-10  ">
+      <div className="flex w-full h-full items-center justify-between">
+        <div className=" flex flex-col m-10 w-[80%] h-auto min-[1100px]:w-[35vw] ">
+          <h1 className="text-white font-bold text-4xl md:text-5xl relative md:w-full">
+            Sobre mí
+            <span className="absolute bottom-0 left-0 h-[7px] bg-subrayado -mb-3 w-28"></span>
+            <Image
+              src={aboutIcon}
+              className="absolute h-16 md:h-20 w-auto bottom-0 left-[10rem] md:left-[13rem] md:-mb-2 -mb-4"
+            />
+          </h1>
+          <p className="text-white mt-8 tracking-tight text-xl md:text-2xl font-sans font-light shrink-0">
+            Hola, mi nombre es Fabian, tengo 20 años y soy un FullStack
+            Developer. Estoy ansioso de poder encontrar una oportunidad laboral
+            en la cual demostrar mis habilidades, enfrentarme a nuevos retos y
+            seguir evolucionando como desarrollador.
+          </p>
+          <div className="flex items-center w-[60%] h-20 md:w-[50%] gap-2 justify-between mt-4 ">
+            <button
+              className="bg-botones1 rounded-[12px] py-2 px-3 w-32 md:w-40 shrink-0 text-white font-bold text-lg drop-shadow-lg"
+              onClick={() => window.open("/CV_FabianPacheco.pdf", "_blank")}
+            >
+              CV
+            </button>
+            <button
+              className="bg-botones1 rounded-[12px] py-2 px-3 w-32 md:w-40 shrink-0 text-white font-bold text-lg drop-shadow-lg"
+              onClick={scrollToContact}
+            >
+              Contrátame
+            </button>
+          </div>
+        </div>
+        <div className="w-auto m-12">
           <Image
             src={sideImage}
-            className="absolute rounded-[50px] w-auto h-[400px] left-[1135px] -mt-20"
+            className=" rounded-[50px]  max-h-[450px] max-w-[650px] hidden min-[1100px]:block "
           />
-        </h1>
-        <p className="text-white mt-8 tracking-tight text-2xl font-sans font-light">
-          Hola, mi nombre es Fabian, tengo 20 años y soy un FullStack Developer.
-          Estoy ansioso de poder encontrar una oportunidad laboral en la cual
-          demostrar mis habilidades, enfrentarme a nuevos retos y seguir
-          evolucionando como desarrollador.
-        </p>
-      </div>
-      <div className="flex w-[500px] ml-20 -mt- justify-between">
-        <button
-          className="bg-botones1 rounded-[12px] p-2 w-52 text-white font-bold text-lg drop-shadow-lg"
-          onClick={() => window.open("/CV_FabianPacheco.pdf", "_blank")}
-        >
-          CV
-        </button>
-        <button
-          className="bg-botones1 rounded-[12px] p-2 w-52 text-white font-bold text-lg drop-shadow-lg"
-          onClick={scrollToContact}
-        >
-          Contrátame
-        </button>
+        </div>
       </div>
     </div>
   );

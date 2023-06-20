@@ -58,28 +58,38 @@ export default function TechSkills() {
   ];
 
   return (
-    <div>
+    <div className="flex flex-col">
       {/* titulo */}
-      <div className="m-20 mt-48 mb-20 ml-20 mr-20 w-auto flex justify-end">
-        <h1 className="text-white font-bold text-5xl relative">
-          Tech Skills
-          <span className="absolute bottom-0 left-20 h-[7px] bg-subrayado -mb-3 w-36"></span>
-          <Image
-            src={winrarLogo}
-            className="absolute h-16 w-auto -ml-20 -mt-12"
-          />
-        </h1>
+      <div className="flex justify-center">
+        <div className="w-[90%] mt-20 mb-10 flex justify-end">
+          <h1 className="text-white font-bold text-4xl md:text-5xl relative">
+            Tech Skills
+            <span className="absolute bottom-0 md:left-20 left-10 h-[7px] bg-subrayado -mb-3 md:w-36 w-32"></span>
+            <Image
+              src={winrarLogo}
+              className="absolute md:h-16 h-12 w-auto top-0 md:right-[14rem] right-[11rem]"
+            />
+          </h1>
+        </div>
       </div>
       {/* skills */}
-      <div className="flex justify-center items-center -mt-20  ">
-        <div className="flex items-center justify-center relative mt-2 w-[65%] h-[700px]">
-          <Image src={skillWindow} className="mt-2 w-full" />
-          <div className="absolute w-[90%] left-10 mt-10">
-            <ul className="flex flex-wrap gap-3">
+      <div className="flex justify-center items-center h-[40vh] md:h-[50vh]">
+        <div
+          className="flex items-center justify-center bg-[url('/images/skillsWindow.png')]  mt-2 md:w-[60vw] w-[90vw] h-[100%] "
+          style={{ backgroundSize: "100% 100%" }}
+        >
+          {/* <Image src={skillWindow} className="mt-2 w-full h-full" /> */}
+          <div className="flex items-center w-[90%] h-[65%] -mb-10  ">
+            <ul className="flex flex-wrap items-center gap-x-3 h-[100%]">
               {skills.map((skill) => (
-                <li className="flex flex-col items-center text-center">
-                  <Image src={skill.icon} className="h-20 w-auto" />
-                  <h1 className="text-black">{skill.tech}</h1>
+                <li className="flex flex-col items-center p-1 text-center h-[6vw] md:h-[5vw]">
+                  <Image
+                    src={skill.icon}
+                    className="h-[80%] md:h-[70%] w-auto min-[650px]:h-[90%]"
+                  />
+                  <h1 className="text-black text-xs md:text-base">
+                    {skill.tech}
+                  </h1>
                 </li>
               ))}
             </ul>

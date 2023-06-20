@@ -16,16 +16,24 @@ export const sendMail = createAsyncThunk(
             position: toast.POSITION.BOTTOM_LEFT,
           },
           error: {
-            render() {
-              return "Hubo un problema, puede que el servidor no haya encendido aun, porfavor espere 1 minuto y vuelva a intentarlo.";
+            render({ data }) {
+              if (
+                data?.response?.data?.message ===
+                "Debes llenar todos los campos"
+              ) {
+                return `${data.response.data.message}`;
+              } else
+                return "Puede que el servidor no haya encendido, porfavor espere un minuto y vuelva a intentarlo";
             },
             position: toast.POSITION.BOTTOM_LEFT,
           },
         }
       );
+      console.log(response);
 
       return response.data;
     } catch (error) {
+      console.log(error);
       return rejectWithValue(error.response.data.message);
     }
   }
@@ -37,20 +45,21 @@ const mailSlice = createSlice({
     mensajes: [],
   },
   extraReducers: (builder) => {
-    builder
-      .addCase(sendMail.fulfilled, (state, action) => {
-        state.mensajes = [...state.mensajes, action.payload];
-        toast.success("El mensaje se envio correctamente!", {
-          position: toast.POSITION.BOTTOM_LEFT,
-          autoClose: 2000,
-        });
-      })
-      .addCase(sendMail.rejected, (state, action) => {
-        toast.error(action.payload, {
-          position: toast.POSITION.BOTTOM_LEFT,
-          autoClose: 2000,
-        });
+    builder.addCase(sendMail.fulfilled, (state, action) => {
+      state.mensajes = [...state.mensajes, action.payload];
+      toast.success("El mensaje se envio correctamente!", {
+        position: toast.POSITION.BOTTOM_LEFT,
+        autoClose: 2000,
       });
+    });
+    // .addCase(sendMail.rejected, (state, action) => {
+    //   action.payload === "Debes llenar todos los campos"
+    //     ? toast.error(action.payload, {
+    //         position: toast.POSITION.BOTTOM_LEFT,
+    //         autoClose: 2000,
+    //       })
+    //     : null;
+    // });
   },
 });
 

@@ -4,73 +4,69 @@ import Image from "next/image";
 
 export default function DetailCard({ imagen, tecnologias, nombre }) {
   return (
-    <div className="relative bg-detailCardBg border-detailCardBorder border-[1px] w-[1020px] h-[560px] rounded-br-[25px]">
-      <div className="flex w-auto p-3 text-center justify-center items-center h-10 border-b-[1px]">
-        <h4>{nombre}</h4>
-      </div>
-      <div className="flex flex-col justify-between gap-[1px] p-3 ml-8 h-[93%] border-r-[1px] w-[140px] ">
-        <h3 className="relative">
-          <Image
-            src={DetailFolder}
-            className="absolute w-auto h-6 right-[120px] bottom-[1px]"
-          />
-          Frontend
-        </h3>
-        <ul className="-mt-12">
-          {tecnologias.frontend.map((tech) => (
-            <li className="relative text-[13px] ">
-              <Image
-                src={detailArrow}
-                className="absolute h-4 w-auto right-[120px]"
-              />
-              {tech}
-            </li>
-          ))}
-        </ul>
+    <div className="relative bg-detailCardBg border-detailCardBorder border-[1px] md:w-[60%] w-[70%] min-h-[50%] md:min-h-[60%] rounded-br-[25px]">
+      <div className="flex flex-col h-[100%]">
+        <div className="flex w-auto p-3 text-center justify-center items-center h-10 border-b-[1px]">
+          <h4>{nombre}</h4>
+        </div>
+        <div className="flex h-[100%]">
+          <div className="md:flex flex-col justify-around gap-6  p-3 border-r-[1px] w-[10rem] hidden ">
+            <div className="col">
+              <div className="flex gap-1">
+                <Image src={DetailFolder} className="w-auto h-5 " />
+                <h3>Frontend</h3>
+              </div>
+              <ul className="">
+                {tecnologias.frontend.map((tech) => (
+                  <div className="flex">
+                    <Image src={detailArrow} className="h-4 w-auto " />
+                    <li className="text-[13px] ">{tech}</li>
+                  </div>
+                ))}
+              </ul>
+            </div>
 
-        <h3 className="relative">
-          <Image
-            src={DetailFolder}
-            className="absolute w-auto h-6 right-[120px] bottom-[1px]"
-          />
-          Backend
-        </h3>
-        <ul className="-mt-12">
-          {tecnologias.backend.map((tech) => (
-            <li className="relative text-[13px] ">
-              <Image
-                src={detailArrow}
-                className="absolute h-4 w-auto right-[120px]"
-              />
-              {tech}
-            </li>
-          ))}
-        </ul>
+            <div className="col">
+              <div className="flex">
+                <Image src={DetailFolder} className="w-auto h-5 " />
+                <h3>Backend</h3>
+              </div>
+              <ul className="">
+                {tecnologias.backend.map((tech) => (
+                  <div className="flex">
+                    <Image src={detailArrow} className="h-4 w-auto " />
+                    <li className="text-[13px] ">{tech}</li>
+                  </div>
+                ))}
+              </ul>
+            </div>
 
-        <h3 className="relative">
-          <Image
-            src={DetailFolder}
-            className="absolute w-auto h-6 right-[120px] bottom-[1px]"
-          />
-          Otros
-        </h3>
-        <ul className="-mt-12">
-          {tecnologias.otros.map((tech) => (
-            <li className="relative text-[13px] ">
-              <Image
-                src={detailArrow}
-                className="absolute h-4 w-auto right-[120px]"
-              />
-              {tech}
-            </li>
-          ))}
-        </ul>
+            <div className="col">
+              <div className="flex gap-1">
+                <Image src={DetailFolder} className="w-auto h-5 " />
+                <h3>Otros</h3>
+              </div>
+              <ul className="">
+                {tecnologias.otros.map((tech) => (
+                  <div className="flex">
+                    <Image src={detailArrow} className="h-4 w-auto " />
+                    <li className="text-[13px] ">{tech}</li>
+                  </div>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="rounded-br-[25px] h-[100%] w-[100%]">
+            <iframe
+              src="https://www.youtube.com/embed/UUe8N5-pxdM?modestbranding=1&showinfo=0&rel=0"
+              className="object-fill rounded-br-[25px] h-full w-[100%]"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            />
+          </div>
+        </div>
       </div>
-      <Image
-        src={require(`../../public/images/${imagen}.png`)}
-        className="absolute left-[172px] bottom-[0.01px] h-[518.5px] w-[846px] rounded-br-[25px]"
-      />
-      {/* <button onClick={console.log(imagen)}>test</button> */}
     </div>
   );
 }

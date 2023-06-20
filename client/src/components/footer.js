@@ -55,30 +55,30 @@ export default function Footer() {
   };
 
   return (
-    <div className="flex mt-36 -mb-20 bg-footerBg h-[600px]">
+    <div className="flex md:flex-row flex-col mt-36  bg-footerBg ">
       {/* Contacto */}
-      <div className="p-16 w-[40%] h-full mt-30">
-        <h1 className="relative text-5xl">
+      <div className=" p-4 m-3 md:p-16 w-full md:w-[40%] h-full mt-30">
+        <h1 className="relative text-4xl md:text-5xl">
           Contáctame
           <span className="absolute bottom-0 left-1 h-[7px] bg-subrayado -mb-3 w-40"></span>
         </h1>
         <div className="flex flex-col mt-16 gap-5">
           <a
-            className="relative text-lg ml-10 py-2"
+            className="relative text-sm md:text-lg ml-10 py-2"
             href="mailto:fabiangpachecor@gmail.com"
           >
             <Image src={mail} className="absolute h-8 w-auto -mt-1 -ml-10" />
             Fabiangpachecor@gmail.com
           </a>
           <a
-            className="relative text-lg ml-10 py-2"
+            className="relative text-sm md:text-lg ml-10 py-2"
             href="https://github.com/fabgpr"
           >
             <Image src={github} className="absolute h-12 w-auto -mt-4 -ml-12" />
             Github.com/fabgpr
           </a>
           <a
-            className="relative text-lg ml-10 py-2"
+            className="relative text-sm md:text-lg ml-10 py-2"
             href="https://www.linkedin.com/in/fabiangpr/"
           >
             <Image
@@ -88,7 +88,7 @@ export default function Footer() {
             Linkedin.com/in/fabiangpr
           </a>
           <a
-            className="relative text-lg ml-10 py-2"
+            className="relative text-sm md:text-lg ml-10 py-2"
             href="#"
             onClick={handleCopy}
           >
@@ -101,38 +101,40 @@ export default function Footer() {
         </div>
       </div>
       <form
-        className="flex justify-center items-center -mt-16 w-full"
+        className="flex justify-center items-center mt-10 h-full w-full"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-wrap gap-3 w-[80%] p-4">
-          <Tooltip
-            className="pt-2 w-[35%]"
-            title="Coloca tu nombre asi puedo saber quien es el remitente!"
-            trigger=" mouseenter focus"
-            interactive
-          >
-            <input
-              className="p-2 h-12 rounded-[4px] bg-inputBg text-lg w-full"
-              placeholder="Nombre"
-              name="nombre"
-              onChange={handleForm}
-              value={form.nombre}
-            />
-          </Tooltip>
-          <Tooltip
-            className="pt-2 w-[63.84%]"
-            title="Coloca tu mail asi puedo contactarte luego!"
-            trigger=" mouseenter focus"
-            interactive
-          >
-            <input
-              className="p-2 h-12  rounded-[4px] bg-inputBg text-lg w-full"
-              placeholder="Mail"
-              name="mail"
-              onChange={handleForm}
-              value={form.mail}
-            />
-          </Tooltip>
+        <div className="flex flex-wrap gap-3 w-[95%] md:w-[80%] p-4">
+          <div className="flex flex-nowrap gap-3 w-full">
+            <Tooltip
+              className="pt-2 w-[45%] md:w-[35%]"
+              title="Coloca tu nombre asi puedo saber quien es el remitente!"
+              trigger=" mouseenter focus"
+              interactive
+            >
+              <input
+                className="p-2 h-12 rounded-[4px] bg-inputBg text-lg w-full"
+                placeholder="Nombre"
+                name="nombre"
+                onChange={handleForm}
+                value={form.nombre}
+              />
+            </Tooltip>
+            <Tooltip
+              className="pt-2 w-full"
+              title="Coloca tu mail asi puedo contactarte luego!"
+              trigger=" mouseenter focus"
+              interactive
+            >
+              <input
+                className="p-2 h-12  rounded-[4px] bg-inputBg text-lg w-full"
+                placeholder="Mail"
+                name="mail"
+                onChange={handleForm}
+                value={form.mail}
+              />
+            </Tooltip>
+          </div>
           <Tooltip
             className="pb-2 w-full"
             title="Este mensaje llegara a mi casilla de correo junto con el Nombre y Mail que escribiste previamente"

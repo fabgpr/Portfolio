@@ -93,28 +93,30 @@ export default function Projects() {
   }, []);
 
   return (
-    <div className="mt-10">
-      <div className="m-20 mt-56 mb-20 ml-20 mr-20 w-auto flex justify-center">
-        <h1 className="text-white font-bold text-5xl relative ">
+    <div className="mt-20">
+      <div className=" w-auto flex justify-center">
+        <h1 className="text-white font-bold md:text-5xl text-4xl relative ">
           Proyectos
-          <span className="absolute bottom-0 left-16 h-[7px] bg-subrayado -mb-3 w-24"></span>
+          <span className="absolute bottom-0  left-10 md:left-16 h-[7px] bg-subrayado -mb-3 w-24"></span>
           <Image
-            className="absolute bottom-0 left-52 w-auto h-28 -mb-7"
+            className="absolute bottom-0 left-40 md:left-52 w-auto h-24 md:h-28 -mb-7"
             src={projectIcon}
           />
         </h1>
       </div>
-      <div className="flex justify-center items-center m-20 -mt-8 h-[700px] rounded-[20px] bg-divProyectos drop-shadow-xl">
-        <div className="flex justify-between items-center w-[90%]">
+      <div className="flex justify-center items-center m-6 p-5  mt-10 md:m-20 md:mt-10 h-auto rounded-[20px] bg-divProyectos drop-shadow-xl">
+        <div className="flex justify-center md:justify-between items-center w-[90vw]">
           <button
-            className={`${buttonLeft ? "" : "invisible"}`}
+            className={`${buttonLeft ? "" : "invisible"} `}
             ref={targetRef}
             onMouseEnter={handleTooltipOpen}
             onMouseLeave={handleTooltipClose}
             onClick={() => handleButtonLeft(projects)}
           >
             <Tooltip
-              className={`text-white p-1 ${buttonLeft ? "" : "invisible"}`}
+              className={`text-white p-1 ${
+                buttonLeft ? "" : "invisible"
+              }md:inline-block hidden`}
               title="Más Proyectos"
               trigger="manual"
               open={buttonLeft ? showTooltip : buttonLeft}
@@ -123,7 +125,7 @@ export default function Projects() {
               <Image src={leftArrow} className="w-16" />
             </Tooltip>
           </button>
-          <div>
+          <div className="w-full">
             <Carousel project={currProject} />
           </div>
           <button
@@ -132,7 +134,9 @@ export default function Projects() {
             onClick={() => handleButtonRight(projects)}
           >
             <Tooltip
-              className={`text-white p-1 ${buttonRight ? "" : "invisible"}`}
+              className={`text-white p-1 ${
+                buttonRight ? "" : "invisible"
+              } md:inline-block hidden`}
               title="Más Proyectos"
               trigger="manual"
               open={buttonRight ? showTooltip : buttonRight}
@@ -142,7 +146,7 @@ export default function Projects() {
             </Tooltip>
           </button>
         </div>
-        <div className="absolute flex justify-around top-[39rem] w-[20rem]">
+        {/* <div className="absolute flex justify-around top-[39rem] w-[20rem]">
           <button
             className="bg-formButtons px-9 py-1 text-lg rounded-lg"
             onClick={() =>
@@ -160,7 +164,7 @@ export default function Projects() {
           >
             Github
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
