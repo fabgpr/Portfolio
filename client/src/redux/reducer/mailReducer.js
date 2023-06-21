@@ -23,7 +23,7 @@ export const sendMail = createAsyncThunk(
               ) {
                 return `${data.response.data.message}`;
               } else
-                return "Puede que el servidor no haya encendido, porfavor espere un minuto y vuelva a intentarlo";
+                return "Porfavor espere 30 segundos y vuelva a intentar, quizas el servidor aun no haya encendido";
             },
             position: toast.POSITION.BOTTOM_LEFT,
           },

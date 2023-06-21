@@ -41,8 +41,6 @@ app.post("/mail", async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: error.message,
-      email: `mail > ${process.env.EMAIL}`,
-      pass: process.env.PASS,
     });
   }
 });
