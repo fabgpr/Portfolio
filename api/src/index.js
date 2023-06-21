@@ -35,6 +35,8 @@ app.post("/mail", async (req, res) => {
       ${mensaje}`,
     });
 
+    console.log(process.env.PASS);
+
     res.status(200).json({ message: "El mensaje se envio correctamente!" });
   } catch (error) {
     res.status(500).json({ message: error.message });
