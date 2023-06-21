@@ -39,7 +39,13 @@ app.post("/mail", async (req, res) => {
 
     res.status(200).json({ message: "El mensaje se envio correctamente!" });
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    res
+      .status(500)
+      .json({
+        message: error.message,
+        email: process.env.EMAIL,
+        pass: process.env.PASS,
+      });
   }
 });
 
