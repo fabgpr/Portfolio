@@ -59,7 +59,7 @@ const mailSlice = createSlice({
     //         autoClose: 2000,
     //       })
     //     : null;
-    // });
+    // });;
   },
 });
 
