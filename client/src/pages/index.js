@@ -19,6 +19,11 @@ export default function Home() {
       <Head>
         <title>FabianGPR</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="shortcut icon"
+          href="/icons/portfolio-icon.png
+        "
+        />
       </Head>
       <Banner ref={scrollRef} />
       <AboutMe />

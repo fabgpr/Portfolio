@@ -21,9 +21,13 @@ export default function AboutMe() {
           </h1>
           <p className="text-white mt-8 tracking-tight text-xl md:text-2xl font-sans font-light shrink-0">
             Hola, mi nombre es Fabian, tengo 20 años y soy un FullStack
-            Developer. Estoy ansioso de poder encontrar una oportunidad laboral
-            en la cual demostrar mis habilidades, enfrentarme a nuevos retos y
-            seguir evolucionando como desarrollador.
+            Developer. soy un apasionado por la tecnologia con una gran ambicion
+            por explayar mis habilidades en el mundo del IT aprendiendo nuevas
+            tecnologias y profundizandolas en el proceso. <br />
+            <br />
+            Mi objetivo es ponerme cada vez retos mas dificiles para poder
+            evolucionar en el menor tiempo posible, asi que no dudes en ponerme
+            a prueba.
           </p>
           <div className="flex items-center w-[60%] h-20 md:w-[50%] gap-2 justify-between mt-4 ">
             <button
